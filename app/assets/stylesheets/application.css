@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  max-width: 50em;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
