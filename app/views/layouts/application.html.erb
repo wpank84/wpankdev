@@ -7,9 +7,43 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/d58bb37aa5.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="mx-auto">
+    <div class="cursor cursor-small"></div>
+    <%=render 'layouts/nav'%>
     <%= yield %>
   </body>
+    <script>
+      const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        })
+
+        document.addEventListener('click', () => {
+            cursor.classList.add("expand");
+
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500)
+        })
+
+      const cursorLinks = document.querySelectorAll('a');
+
+        cursorLinks.forEach(item => {
+          item.addEventListener('pointerover', (e) => {
+          cursor.classList.remove("cursor-small");
+          cursor.classList.add("cursor-big");
+        })
+        item.addEventListener('pointerout', (e) => {
+          cursor.classList.remove("cursor-big");
+          cursor.classList.add("cursor-small");
+        })
+        })
+
+        
+
+    </script>
 </html>

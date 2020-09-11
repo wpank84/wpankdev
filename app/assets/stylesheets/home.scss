@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.mtop-neg-1 {
+  margin-top: -1rem;
+}
+
+.underlined {
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
 .fade-in {
   animation: fadeIn ease 2s;
   -webkit-animation: fadeIn ease 2s;

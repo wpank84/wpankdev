@@ -14,10 +14,35 @@
  *= require_self
  */
 
+:root {
+  --underline: #fdbb41;
+  --test: #ec6060;
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+
 body {
   max-width: 50em;
 }
 
 .mx-auto {
   margin: 0 auto;
+}
+
+.cursor {
+  border: 2px solid var(--underline);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.cursor-small {
+  width: 20px;
+  height: 20px;
+}
+
+.cursor-big {
+  width: 40px;
+  height: 40px;
 }
