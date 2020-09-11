@@ -1,20 +1,14 @@
-  <section class="section">
+  <header class="section">
     <div class="container">
       <h1 id="welcome" class="is-size-1 title has-text-centered mt-6"></h1>
       <p id="intro" class="subtitle has-text-centered is-invisible mt-smol">
-        Back-end | Front-end | <span class="underlined has-text-weight-bold">Developer</span class="">
+        Back-end | Front-end | <span class="underlined has-text-weight-bold">Developer</span>
       </p>
       <p id="skill-icons" class="mtop-neg-1 has-text-centered subtitle is-invisible has-text-grey"><i class="far fa-gem"></i> <i class="fab fa-js-square"></i> <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-git-alt"></i></p>
     </div>
-  </section>
+  </header>
 
   <script>
-    var root = document.documentElement;
-
-    colors = ["aquamarine", "#fdbb41", "#0099ff", "#ec6060"];
-
-    root.style.setProperty('--underline', colors[randomize(colors.length)])
-
     var i = 0;
     var txt = "Hi, I'm Will.";
     var speed = 120;
@@ -37,11 +31,6 @@
         skillIcons.classList.remove("is-invisible");
 
       }
-    }
-
-    function randomize(max){
-      return Math.floor(Math.random() * Math.floor(max));
-    }
-
+    }   
     typeWriter();
   </script>

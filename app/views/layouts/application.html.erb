@@ -11,26 +11,27 @@
   </head>
 
   <body class="mx-auto">
-    <div class="cursor cursor-small"></div>
+    <div class="cursor cursor-small fade-in"></div>
     <%=render 'layouts/nav'%>
     <%= yield %>
   </body>
     <script>
-      const cursor = document.querySelector('.cursor');
+      var cursor = document.querySelector('.cursor');
+      cursor.classList.add("is-invisible");
 
-        document.addEventListener('mousemove', e => {
-            cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-        })
+      var positioner = document.addEventListener('mousemove', e => {
+         cursor.classList.remove("is-invisible");
 
-        document.addEventListener('click', () => {
-            cursor.classList.add("expand");
+        if(cursor.classList.contains("cursor-small")) {
+          cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        }
+        else {
+          cursor.setAttribute("style", "top: "+(e.pageY - 20)+"px; left: "+(e.pageX - 20)+"px;")
+        }  
+      })
+      
 
-            setTimeout(() => {
-                cursor.classList.remove("expand");
-            }, 500)
-        })
-
-      const cursorLinks = document.querySelectorAll('a');
+      var cursorLinks = document.querySelectorAll('a');
 
         cursorLinks.forEach(item => {
           item.addEventListener('pointerover', (e) => {
@@ -42,8 +43,16 @@
           cursor.classList.add("cursor-small");
         })
         })
+    </script>
+    <script>
+      var root = document.documentElement;
 
-        
+      colors = ["aquamarine", "#fdbb41", "#0099ff", "#ec6060"];
 
+      root.style.setProperty('--underline', colors[randomize(colors.length)])
+
+      function randomize(max){
+      return Math.floor(Math.random() * Math.floor(max));
+    }
     </script>
 </html>

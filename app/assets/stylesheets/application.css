@@ -29,8 +29,17 @@ body {
   margin: 0 auto;
 }
 
+.mtop-neg-1 {
+  margin-top: -1rem;
+}
+
+.underlined {
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
 .cursor {
-  border: 2px solid var(--underline);
+  border: 3px solid var(--underline);
   border-radius: 50%;
   position: absolute;
   pointer-events: none;
@@ -45,4 +54,56 @@ body {
 .cursor-big {
   width: 40px;
   height: 40px;
+}
+
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
