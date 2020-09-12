@@ -1,5 +1,5 @@
 class ParagraphsController < ApplicationController
-  before_action :set_paragraph, only: [:show, :edit, :update, :destroy]
+  before_action :set_paragraph, only: %i[show edit update destroy]
 
   # GET /paragraphs
   # GET /paragraphs.json
@@ -9,8 +9,7 @@ class ParagraphsController < ApplicationController
 
   # GET /paragraphs/1
   # GET /paragraphs/1.json
-  def show
-  end
+  def show; end
 
   # GET /paragraphs/new
   def new
@@ -18,18 +17,18 @@ class ParagraphsController < ApplicationController
   end
 
   # GET /paragraphs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /paragraphs
   # POST /paragraphs.json
   def create
-    @paragraph = Paragraph.new(paragraph_params)
+    @project = Project.find(params[:project_id])
+    @paragraph = @project.paragraph.create(paragraph_params)
 
     respond_to do |format|
       if @paragraph.save
-        format.html { redirect_to @paragraph, notice: 'Paragraph was successfully created.' }
-        format.json { render :show, status: :created, location: @paragraph }
+        format.html { redirect_to project_path(@project), notice: 'Paragraph was successfully created.' }
+        format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
         format.json { render json: @paragraph.errors, status: :unprocessable_entity }
@@ -62,13 +61,14 @@ class ParagraphsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_paragraph
-      @paragraph = Paragraph.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def paragraph_params
-      params.require(:paragraph).permit(:content, :project_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_paragraph
+    @paragraph = Paragraph.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def paragraph_params
+    params.require(:paragraph).permit(:content, :project_id)
+  end
 end

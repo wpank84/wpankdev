@@ -10,5 +10,13 @@
   <%= @project.description %>
 </p>
 
+<h2>Paragraphs</h2>
+<% @project.paragraphs.each do |paragraph| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= paragraph.content %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
