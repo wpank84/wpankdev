@@ -6,31 +6,8 @@
       </p>
       <p id="skill-icons" class="mtop-neg-1 has-text-centered subtitle is-invisible has-text-grey"><i class="far fa-gem"></i> <i class="fab fa-js-square"></i> <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-git-alt"></i></p>
     </div>
+
+    <%# TODO: Add content block that suggests starting somewhere, such as the Projects page %>
   </header>
 
-  <script>
-    var i = 0;
-    var txt = "Hi, I'm Will.";
-    var speed = 120;
-    var welcome = document.getElementById("welcome");
-    var intro = document.getElementById("intro");
-    var skillIcons = document.getElementById("skill-icons");
-
-     function typeWriter() {
-      if (i < txt.length) {
-        welcome.textContent += txt.charAt(
-          i
-        );
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-      if (txt.length == welcome.textContent.length){
-        intro.classList.add("fade-in");
-        intro.classList.remove("is-invisible");
-        skillIcons.classList.add("fade-in");
-        skillIcons.classList.remove("is-invisible");
-
-      }
-    }   
-    typeWriter();
-  </script>
+  <%= javascript_pack_tag 'home' %>
