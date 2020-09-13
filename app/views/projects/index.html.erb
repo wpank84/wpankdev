@@ -1,28 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<div class="container">
+<h1 class="is-size-1 title has-text-centered mt-6">Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="container">
+        <h2 class="title"><%= link_to project.title, project %></h2>
+        <p class="subtitle"><%= project.description %></p class="subtitle">
+        <%= link_to 'View', project %>
+        <% if logged_in? %>
+        | <%= link_to 'Edit', edit_project_path(project) %> |
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+
 
 <br>
 
