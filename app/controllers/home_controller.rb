@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-  def index
-  end
+  skip_before_action :authorized
+  def index; end
 end
