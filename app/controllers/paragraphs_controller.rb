@@ -23,7 +23,7 @@ class ParagraphsController < ApplicationController
   # POST /paragraphs.json
   def create
     @project = Project.find(params[:project_id])
-    @paragraph = @project.paragraph.create(paragraph_params)
+    @paragraph = @project.paragraphs.create(paragraph_params)
 
     respond_to do |format|
       if @paragraph.save
@@ -41,7 +41,7 @@ class ParagraphsController < ApplicationController
   def update
     respond_to do |format|
       if @paragraph.update(paragraph_params)
-        format.html { redirect_to @paragraph, notice: 'Paragraph was successfully updated.' }
+        format.html { redirect_to project_path(@paragraph), notice: 'Paragraph was successfully updated.' }
         format.json { render :show, status: :ok, location: @paragraph }
       else
         format.html { render :edit }

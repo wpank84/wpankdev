@@ -2,6 +2,15 @@
 
 <%= render 'form', project: @project %>
 
+<h2>Paragraphs</h2>
+<% @project.paragraphs.each do |paragraph| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= paragraph.content %>
+    <%= link_to 'Edit', edit_project_paragraph_path(paragraph) %>
+  </p>
+<% end %>
+
 <%= render 'pform'%>
 
 <%= link_to 'Show', @project %> |

@@ -1,4 +1,4 @@
-<%= form_with(model: paragraph, local: true) do |form| %>
+<%= form_with(model: paragraph, url: project_paragraph_path, local: true) do |form| %>
   <% if paragraph.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(paragraph.errors.count, "error") %> prohibited this paragraph from being saved:</h2>
@@ -14,11 +14,6 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_field :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
   </div>
 
   <div class="actions">
