@@ -53,9 +53,11 @@ class ParagraphsController < ApplicationController
   # DELETE /paragraphs/1
   # DELETE /paragraphs/1.json
   def destroy
+    @project = Project.find(params[:project_id])
+    @paragraph = @project.paragraphs.find(params[:id])
     @paragraph.destroy
     respond_to do |format|
-      format.html { redirect_to paragraphs_url, notice: 'Paragraph was successfully destroyed.' }
+      format.html { redirect_to project_path(@project), notice: 'Paragraph was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
