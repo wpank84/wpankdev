@@ -5,10 +5,9 @@
 
   
     <% @projects.each do |project| %>
-      <div class="container">
-        <h2 class="title"><%= link_to project.title, project %></h2>
+      <div class="container mt-5">
+        <h2 class="title"><%= link_to project.title, project, class: " underlined link" %></h2>
         <p class="subtitle"><%= project.description %></p class="subtitle">
-        <%= link_to 'View', project %>
         <% if logged_in? %>
         | <%= link_to 'Edit', edit_project_path(project) %> |
           <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -20,4 +19,6 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<% if logged_in? %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
