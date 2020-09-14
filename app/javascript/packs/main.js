@@ -46,8 +46,6 @@ const $navbarBurgers = Array.prototype.slice.call(
   0
 );
 
-console.log($navbarBurgers);
-
 // Check if there are any navbar burgers
 if ($navbarBurgers.length > 0) {
   // Add a click event on each of them

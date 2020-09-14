@@ -7,7 +7,7 @@
   <p>
     <strong>Comment:</strong>
     <%= paragraph.content %>
-    <%= link_to 'Edit', edit_project_paragraph_path(paragraph) %>
+    <%= link_to 'Edit', edit_project_paragraph_path(@project, paragraph) %>
   </p>
 <% end %>
 
