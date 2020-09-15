@@ -4,6 +4,7 @@ var speed = 120;
 var welcome = document.getElementById('welcome');
 var intro = document.getElementById('intro');
 var skillIcons = document.getElementById('skill-icons');
+var home = document.getElementById('main');
 
 function typeWriter() {
   if (i < txt.length) {
@@ -16,6 +17,8 @@ function typeWriter() {
     intro.classList.remove('is-invisible');
     skillIcons.classList.add('fade-in');
     skillIcons.classList.remove('is-invisible');
+    home.classList.add('fade-in');
+    home.classList.remove('is-invisible');
   }
 }
 typeWriter();

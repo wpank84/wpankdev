@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<main class="container fade-in">
+<h1 class="is-size-1 title has-text-centered mt-6">Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="container mt-5">
+        <h2 class="title"><%= link_to project.title, project, class: " underlined link" %></h2>
+        <p class="subtitle"><%= project.description %></p class="subtitle">
+          
+          <% if project.tag.to_s.include? "Ruby"%>
+            <div class="tag is-danger is-light">Ruby</div>
+          <% end %>
+          <% if project.tag.to_s.include? "Rails"%>
+            <div class="tag is-link is-light">Rails</div>
+          <% end %>
+          <% if project.tag.to_s.include? "Javascript"%>
+            <div class="tag is-warning is-light">Javascript</div>
+          <% end %>
+          <% if project.tag.to_s.include? "CSS"%>
+            <div class="tag is-success is-light">CSS</div>
+          <% end %>
+          
+        <% if logged_in? %>
+          <%= link_to 'Edit', edit_project_path(project), class: "link" %> |
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>
+        <%end%>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </main>
 
+
+
+
+<% if logged_in? %>
 <br>
-
-<%= link_to 'New Project', new_project_path %>
+  <%= link_to 'New Project', new_project_path, class: "link" %>
+<% end %>

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
@@ -19,5 +24,7 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-  <%= link_to 'Destroy', project_paragraph_path(paragraph), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Destroy', project_paragraph_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+

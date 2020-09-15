@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### TODO
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Add functionality to hamburger menu for small screens
+2. Add image functionality to projects pages
+3. Style Projects pages
+4. About page
+5. Update home page with content block that suggests starting somewhere, such as the Projects page
+6. Deploy

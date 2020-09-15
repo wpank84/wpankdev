@@ -1,6 +1,6 @@
 class ParagraphsController < ApplicationController
   before_action :set_paragraph, only: %i[show edit update destroy]
-
+  before_action :set_project, only: %i[edit]
   # GET /paragraphs
   # GET /paragraphs.json
   def index
@@ -69,8 +69,12 @@ class ParagraphsController < ApplicationController
     @paragraph = Paragraph.find(params[:id])
   end
 
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
+
   # Only allow a list of trusted parameters through.
   def paragraph_params
-    params.require(:paragraph).permit(:content, :project_id)
+    params.require(:paragraph).permit(:content, :project_id, :title)
   end
 end

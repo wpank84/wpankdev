@@ -25,6 +25,10 @@ body {
   max-width: 50em;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .mx-auto {
   margin: 0 auto;
 }
