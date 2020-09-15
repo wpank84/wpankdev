@@ -6,10 +6,10 @@ default: &default
 development:
   <<: *default
   database: CMS_dev
-  host: 127.0.0.1
+  host: <%= ENV["DB_HOST"] %>
   port: 5432
-  username: postgres
-  password: admin
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,15 +17,15 @@ development:
 test:
   <<: *default
   database: CMS_test
-  host: 127.0.0.1
+  host: <%= ENV["DB_HOST"] %>
   port: 5432
-  username: postgres
-  password: admin
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
 
 production:
   <<: *default
   database: CMS
-  host: 127.0.0.1
+  host: <%= ENV["DB_HOST"] %>
   port: 5432
-  username: postgres
-  password: admin
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
