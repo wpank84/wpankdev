@@ -1,0 +1,9 @@
+/* line 5, app/assets/stylesheets/projects.scss */
+.link:link {
+  color: #666;
+}
+
+/* line 9, app/assets/stylesheets/projects.scss */
+.link:hover {
+  background-color: #ffedb3;
+}
