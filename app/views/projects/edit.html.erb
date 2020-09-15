@@ -4,13 +4,13 @@
 
 <h2>Paragraphs</h2>
 <% @project.paragraphs.each do |paragraph| %>
+  <h2 class="has-text-weight-semibold"><%= paragraph.title %></h2>
   <p>
-    <strong>Comment:</strong>
     <%= paragraph.content %>
-    <%= link_to 'Edit', edit_project_paragraph_path(@project, paragraph) %>
   </p>
+  <div><%= link_to 'Edit', edit_project_paragraph_path(@project, paragraph) %> |
+    <%= link_to 'Destroy', [paragraph.project, paragraph], method: :delete, data: {confirm: 'Are you sure you want to delete this paragraph?'} %></div>
 <% end %>
-
 <%= render 'pform'%>
 
 <%= link_to 'Show', @project %> |

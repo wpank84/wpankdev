@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<main class="container fade-in">
 <h1 class="is-size-1 title has-text-centered mt-6">Projects</h1>
 
   
@@ -28,11 +28,12 @@
         <%end%>
       </div>
     <% end %>
-  </div>
+  </main>
 
 
-<br>
+
 
 <% if logged_in? %>
+<br>
   <%= link_to 'New Project', new_project_path, class: "link" %>
 <% end %>

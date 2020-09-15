@@ -1,17 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h1 class="is-size-1 title has-text-centered mt-6"><%= @project.title %></h1>
-</div>
+<main class="section fade-in">
+  <div class="container">
+    <h1 class="is-size-1 title has-text-centered"><%= @project.title %></h1>
+  </div>
 
-<h2>Paragraphs</h2>
-<% @project.paragraphs.each do |paragraph| %>
+  <% @project.paragraphs.each do |paragraph| %>
 
-<h2 class="title"><%= paragraph.title %></h2>
-  <p class="subtitle">
+  <h2 class="pt-4 mt-4 is-size-4 has-text-weight-semibold"><%= paragraph.title %></h2>
+  <p class="mt-4 is-size-6">
     <%= paragraph.content %>
   </p>
-<% end %>
+  <% end %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <% if logged_in? %>
+    <%= link_to 'Edit', edit_project_path(@project), class: 'link' %> |
+  <% end %>
+  <%= link_to 'Back', projects_path, class: 'link' %>
+</main>
