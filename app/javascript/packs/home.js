@@ -5,6 +5,7 @@ var welcome = document.getElementById('welcome');
 var intro = document.getElementById('intro');
 var skillIcons = document.getElementById('skill-icons');
 var home = document.getElementById('main');
+welcome.textContent = '';
 
 function typeWriter() {
   if (welcome.textContent == txt) {
