@@ -1,6 +1,6 @@
-<h1>Editing Paragraph</h1>
+<h1 class="title">Editing Paragraph</h1>
 
 <%= render 'form', paragraph: @paragraph %>
 
 <%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', edit_project_path(@project) %>

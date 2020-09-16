@@ -11,18 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div>
+    <%= form.label :title, class: 'label'%>
+    <%= form.text_field :title, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div>
+    <%= form.label :content, class: 'label' %>
+    <%= form.text_area :content, class: 'textarea', rows: '10' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit class: 'button mt-5'%>
   </div>
   <%= link_to 'Destroy', project_paragraph_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

@@ -39,10 +39,12 @@ class ParagraphsController < ApplicationController
   # PATCH/PUT /paragraphs/1
   # PATCH/PUT /paragraphs/1.json
   def update
+    @project = Project.find(params[:project_id])
+
     respond_to do |format|
       if @paragraph.update(paragraph_params)
-        format.html { redirect_to project_path(@paragraph), notice: 'Paragraph was successfully updated.' }
-        format.json { render :show, status: :ok, location: @paragraph }
+        format.html { redirect_to project_path(@project), notice: 'Paragraph was successfully updated.' }
+        format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
         format.json { render json: @paragraph.errors, status: :unprocessable_entity }

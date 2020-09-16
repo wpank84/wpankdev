@@ -1,15 +1,17 @@
+<h3 class="title">Create New Paragraph</h3>
+
 <%= form_with(model: [ @project, @project.paragraphs.build ], local: true) do |form| %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div>
+    <%= form.label :title, class: 'label'%>
+    <%= form.text_field :title, class: 'input' %>
+  </div>
 
-  <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :content %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div>
+    <%= form.label :content, class: 'label' %>
+    <%= form.text_area :content, class: 'textarea', rows: '10' %>
+  </div>
+  <div>
+    <%= form.submit class: 'button mt-5' %>
+  </div>
 <% end %>
