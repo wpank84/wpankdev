@@ -81,49 +81,48 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./app/javascript/packs/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./app/javascript/packs/home.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/javascript/packs/main.js":
+/***/ "./app/javascript/packs/home.js":
 /*!**************************************!*\
-  !*** ./app/javascript/packs/main.js ***!
+  !*** ./app/javascript/packs/home.js ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var cursor = document.querySelector('.cursor');
-cursor.classList.add('is-invisible');
-var positioner = document.addEventListener('mousemove', function (e) {
-  cursor.classList.remove('is-invisible');
+var i = 0;
+var txt = "Hi, I'm Will.";
+var speed = 120;
+var welcome = document.getElementById('welcome');
+var intro = document.getElementById('intro');
+var skillIcons = document.getElementById('skill-icons');
+var home = document.getElementById('main');
 
-  if (cursor.classList.contains('cursor-small')) {
-    cursor.setAttribute('style', 'top: ' + (e.pageY - 10) + 'px; left: ' + (e.pageX - 10) + 'px;');
-  } else {
-    cursor.setAttribute('style', 'top: ' + (e.pageY - 20) + 'px; left: ' + (e.pageX - 20) + 'px;');
+function typeWriter() {
+  if (welcome.textContent == txt) {
+    return;
+  } else if (i < txt.length) {
+    welcome.textContent += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
   }
-});
-var cursorLinks = document.querySelectorAll('a');
-cursorLinks.forEach(function (item) {
-  item.addEventListener('pointerover', function (e) {
-    cursor.classList.remove('cursor-small');
-    cursor.classList.add('cursor-big');
-  });
-  item.addEventListener('pointerout', function (e) {
-    cursor.classList.remove('cursor-big');
-    cursor.classList.add('cursor-small');
-  });
-});
-var root = document.documentElement;
-colors = ['aquamarine', '#fdbb41', '#0099ff', '#ec6060'];
-root.style.setProperty('--underline', colors[randomize(colors.length)]);
 
-function randomize(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+  if (txt.length == welcome.textContent.length) {
+    intro.classList.add('fade-in');
+    intro.classList.remove('is-invisible');
+    skillIcons.classList.add('fade-in');
+    skillIcons.classList.remove('is-invisible');
+    home.classList.add('fade-in');
+    home.classList.remove('is-invisible');
+  }
 }
+
+typeWriter();
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main-0310c6a161a7cf7cdfca.js.map
+//# sourceMappingURL=home-d3f0a6b443e5e10bd1d3.js.map

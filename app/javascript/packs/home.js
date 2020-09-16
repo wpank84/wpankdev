@@ -7,11 +7,14 @@ var skillIcons = document.getElementById('skill-icons');
 var home = document.getElementById('main');
 
 function typeWriter() {
-  if (i < txt.length) {
+  if (welcome.textContent == txt) {
+    return;
+  } else if (i < txt.length) {
     welcome.textContent += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
+
   if (txt.length == welcome.textContent.length) {
     intro.classList.add('fade-in');
     intro.classList.remove('is-invisible');
