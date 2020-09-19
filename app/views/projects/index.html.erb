@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <header class="section fade-in">
   <h1 class="is-size-1 title has-text-centered mt-6">Projects</h1>
 </header>
@@ -23,7 +21,7 @@
             <div class="tag is-success is-light">CSS</div>
           <% end %>
           
-        <% if logged_in? %>
+        <% if admin_signed_in? %>
           <%= link_to 'Edit', edit_project_path(project), class: "link" %> |
           <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>
         <%end%>
@@ -35,7 +33,7 @@
   <p>Not all of my work is posted on my project page. Don't hesitate to checkout my <a href="https://github.com/wpank84" class="link underlined has-text-weight-semibold">Github</a> for more of my work.</p>
 </section>
 
-<% if logged_in? %>
+<% if admin_signed_in? %>
 <br>
   <%= link_to 'New Project', new_project_path, class: "link" %>
 <% end %>

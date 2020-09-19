@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_admin!, only: %i[new edit update destroy]
   before_action :set_project, only: %i[show edit update destroy]
-  skip_before_action :authorized, only: %i[index show]
 
   # GET /projects
   # GET /projects.json

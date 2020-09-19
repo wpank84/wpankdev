@@ -1,4 +1,5 @@
 class ParagraphsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_paragraph, only: %i[show edit update destroy]
   before_action :set_project, only: %i[edit]
   # GET /paragraphs
