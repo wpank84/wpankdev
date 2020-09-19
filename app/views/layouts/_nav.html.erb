@@ -33,6 +33,11 @@
             <i class="fab fa-linkedin fa-2x"></i>
         </a>
       </div>
+      <% if admin_signed_in? %>
+        <div class="navbar-item">
+          <%= button_to "Sign out", '/logout', method: :delete, class: 'button' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
