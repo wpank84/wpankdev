@@ -3,7 +3,7 @@
 <%= render 'form', project: @project %>
 
 <h2 class="title">Paragraphs</h2>
-<% @project.paragraphs.each do |paragraph| %>
+<% @paragraphs.each do |paragraph| %>
   <h2 class="has-text-weight-semibold"><%= paragraph.title %></h2>
   <p>
     <%= paragraph.content %>
