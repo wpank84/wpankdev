@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :link, class: 'label'%>
+    <%= form.text_field :link, class: 'input', placeholder: 'https://wpank.dev' %>
+  </div>
+
+  <div>
     <%= form.submit class: 'button mt-5'%>
   </div>
 <% end %>

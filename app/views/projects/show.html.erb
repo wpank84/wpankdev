@@ -1,6 +1,6 @@
 <main class="section fade-in">
   <div class="container">
-    <h1 class="is-size-1 title has-text-centered"><%= @project.title %></h1>
+    <h1 class="is-size-1 title has-text-centered"><a href=<%= @project.link %> class="link underlined"><%= @project.title %></a></h1>
   </div>
 
   <% @paragraphs.each do |paragraph| %>
