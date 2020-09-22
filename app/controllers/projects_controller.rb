@@ -5,12 +5,14 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.order(created_at: :asc)
   end
 
   # GET /projects/1
   # GET /projects/1.json
-  def show; end
+  def show
+    @paragraphs = @project.paragraphs.order(created_at: :asc)
+  end
 
   # GET /projects/new
   def new
@@ -18,7 +20,9 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/1/edit
-  def edit; end
+  def edit
+    @paragraphs = @project.paragraphs.order(created_at: :asc)
+  end
 
   # POST /projects
   # POST /projects.json
@@ -69,6 +73,6 @@ class ProjectsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def project_params
-    params.require(:project).permit(:title, :description, :tag)
+    params.require(:project).permit(:title, :description, :tag, :link)
   end
 end
